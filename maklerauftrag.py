@@ -24,14 +24,16 @@ while weiter == "j":
     
     
     for i in range(anzahl_teilflaechen):
-        print("\nTeilfläche", i + 1)
+        if teilflaechen == "j":
+         print("\nTeilfläche", i + 1)
         
         L = float(input("Länge in Metern eingeben: ").replace(",", "."))
         B = float(input("Breite in Metern eingeben: ").replace(",", "."))
         
         teilflaeche = L * B
-        print("Teilfläche:", teilflaeche, "m²")
-        
+        if anzahl_teilflaechen >= 2:
+         print("Teilfläche:", teilflaeche, "m²")
+
         raumflaeche = raumflaeche + teilflaeche
     
     print("Raumfläche:", raumflaeche, "m²")
