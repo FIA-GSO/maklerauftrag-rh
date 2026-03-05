@@ -7,39 +7,26 @@ weiter = "j"   # Variable für die while Schleife
 
 while weiter == "j":
     print("\nNeuer Raum wird erfasst.")
-    
-    R = R + 1   # Raumzahl erhöhen 
+    R = R + 1  # Raumzahl erhöhen
     print("Raumnummer:", R)
-    
-    raumflaeche = 0.0   # Variable zum Berechnen und Ausgeben der Raumfläche
-    
-    
-    # Abfrage, ob mehrere Teilflächen vorhanden sind
+    raumflaeche = 0.0  # Variable zum Berechnen und Ausgeben der Raumfläche
     teilflaechen = input("Besteht der Raum aus mehreren Teilflächen? (j/n): ")
-    
     if teilflaechen == "j":
-        anzahl_teilflaechen = int(input("Wie viele rechteckige Teilflächen hat der Raum? "))
+        anzahl_teilflaechen = int(input("Wie viele rechteckige "
+                                        "Teilflächen hat der Raum? "))
     else:
         anzahl_teilflaechen = 1
-    
-    
     for i in range(anzahl_teilflaechen):
         if teilflaechen == "j":
-         print("\nTeilfläche", i + 1)
-        
-        L = float(input("Länge in Metern eingeben: ").replace(",", "."))
-        B = float(input("Breite in Metern eingeben: ").replace(",", "."))
-        
-        teilflaeche = L * B
+            print("\nTeilfläche", i + 1)
+        laenge = float(input("Länge in Metern eingeben: ").replace(",", "."))
+        breite = float(input("Breite in Metern eingeben: ").replace(",", "."))
+        teilflaeche = laenge * breite
         if anzahl_teilflaechen >= 2:
-         print("Teilfläche:", teilflaeche, "m²")
-
-        raumflaeche = raumflaeche + teilflaeche
-    
-    print("Raumfläche:", raumflaeche, "m²")
-    
+            print("Teilfläche:", teilflaeche, "m²")
+            raumflaeche = raumflaeche + teilflaeche
+    print("\nRaumfläche:", raumflaeche, "m²")
     gesamtflaeche = gesamtflaeche + raumflaeche
-    
     weiter = input("\nGibt es einen weiteren Raum? (j/n): ")
 
 # Durchschnitt berechnen
@@ -52,4 +39,3 @@ else:
     print("Es wurden keine Räume erfasst.")
 
 # Ende
-# Test
